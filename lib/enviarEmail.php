@@ -10,17 +10,17 @@ function enviarEmail($destinatario, $assunto, $mensagemHTML)
     $mail = new PHPMailer;
     $mail->isSMTP();
     $mail->SMTPDebug = 0;
-    $mail->Host = 'smtp.zerobugs.com.br';
+    $mail->Host = 'smtp.teste.com.br';
     $mail->Port = 587;
     $mail->SMTPAuth = true;
-    $mail->Username = 'teste@zerobugs.com.br';
-    $mail->Password = 'mc0BfI9*mm<';
+    $mail->Username = 'teste@teste.com.br';
+    $mail->Password = 'teste';
 
     $mail->SMTPSecure = false;
     $mail->isHTML(true);
     $mail->CharSet = 'UTF-8';
 
-    $mail->setFrom('teste@zerobugs.com.br', "Teste Zero Bugs");
+    $mail->setFrom('teste@teste.com.br', "Teste teste");
     $mail->addAddress($destinatario);
     $mail->Subject = $assunto;
 
