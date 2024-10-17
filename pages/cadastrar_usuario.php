@@ -1,4 +1,6 @@
 <?php
+
+
 include("lib/conexao.php");
 include("lib/enviarArquivo.php");
 include('lib/protect.php');
@@ -44,43 +46,13 @@ if(isset($_POST['enviar'])) {
 
     }
 }
-
 ?>
-<!-- Page-header start -->
-<div class="page-header card">
-    <div class="row align-items-end">
-        <div class="col-lg-6">
-            <div class="page-header-title">
-                <div class="d-inline">
-                    <h4>Cadastrar Usuário</h4>
-                    <span>Preencha as informações e clique em Salvar</span>
-                </div>  
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="page-header-breadcrumb">
-                <ul class="breadcrumb-title">
-                    <li class="breadcrumb-item">
-                        <a href="index.php">
-                            <i class="icofont icofont-home"></i>
-                        </a>
-                    </li>
-                    <li class="breadcrumb-item">
-                        <a href="index.php?p=gerenciar_usuarios">
-                            Gerenciar Usuário
-                        </a>
-                    </li>
-                    <li class="breadcrumb-item">Cadastrar Usuário</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Page-header end -->
 
-<div class="page-body">
-    <div class="row">
-        <div class="col-sm-12">
+<main class="content">
+    <div class="card">
+        <div class="card-header">
+            <h3>Cadastrar Usuário</h3>           
+            <p class="mb-0 mt-0">Preencha as informações e clique em Salvar</p>
             <?php if(isset($erro) && count($erro) > 0) {
                 ?>
                 <div class="alert alert-danger" role="alert">
@@ -89,14 +61,10 @@ if(isset($_POST['enviar'])) {
                 <?php
             }
             ?>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h5>Formulário de Cadastro</h5>
-                </div>
-                <div class="card-block">
-                    <form action="" method="POST">
-                        <div class="row">
+        </div>
+            <div class="card-block">
+            <form action="" method="POST">
+                        <div class="row mt-3">
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label for="">Nome</label>
@@ -147,7 +115,6 @@ if(isset($_POST['enviar'])) {
                     </form>
                     
                 </div>
-            </div>
-        </div>
+        </div>        
     </div>
-</div>
+</main>

@@ -9,44 +9,15 @@ $sql_query = $mysqli->query($sql_usuarios) or die($mysqli->error);
 $num_usuarios = $sql_query->num_rows;
 
 ?>
-<!-- Page-header start -->
-<div class="page-header card">
-    <div class="row align-items-end">
-        <div class="col-lg-8">
-            <div class="page-header-title">
-                <div class="d-inline">
-                    <h4>Gerenciar Usuários</h4>
-                    <span>Administre os usuários cadastrados no sistema</span>
-                </div>  
-            </div>
+<main class="content">
+    <div class="card">
+        <div class="card-header">
+            <h3>Gerenciar Usuários</h3>
+            <span><a href="index.php?p=cadastrar_usuario">Clique aqui</a> para cadastrar um usuário</span>
+            <p class="mb-0">Administre os usuários cadastrados no sistema</p>
         </div>
-        <div class="col-lg-4">
-            <div class="page-header-breadcrumb">
-                <ul class="breadcrumb-title">
-                    <li class="breadcrumb-item">
-                        <a href="index.php">
-                            <i class="icofont icofont-home"></i>
-                        </a>
-                    </li>
-                    <li class="breadcrumb-item"><a href="#!">Gerenciar Usuários</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Page-header end -->
-
-<div class="page-body">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="card-header">
-                    <h5>Todos os Usuários</h5>
-                    <span><a href="index.php?p=cadastrar_usuario">Clique aqui</a> para cadastrar um usuário</span>
-                </div>
-                <div class="card-block table-border-style">
-                    <div class="table-responsive">
+        <div class="card-body mt-4">
+            <div class="table-responsive">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -79,8 +50,6 @@ $num_usuarios = $sql_query->num_rows;
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
-        </div>
+        </div>        
     </div>
-</div>
+</main>

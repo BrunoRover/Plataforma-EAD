@@ -1,5 +1,4 @@
 <?php
-
 include('lib/conexao.php');
 include('lib/protect.php');
 protect(1);
@@ -8,46 +7,17 @@ $sql_cursos = "SELECT * FROM cursos";
 $sql_query = $mysqli->query($sql_cursos) or die($mysqli->error);
 $num_cursos = $sql_query->num_rows;
 
-?>
-<!-- Page-header start -->
-<div class="page-header card">
-    <div class="row align-items-end">
-        <div class="col-lg-8">
-            <div class="page-header-title">
-                <div class="d-inline">
-                    <h4>Gerenciar Cursos</h4>
-                    <span>Administre os cursos cadastrados no sistema</span>
-                </div>  
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="page-header-breadcrumb">
-                <ul class="breadcrumb-title">
-                    <li class="breadcrumb-item">
-                        <a href="index.php">
-                            <i class="icofont icofont-home"></i>
-                        </a>
-                    </li>
-                    <li class="breadcrumb-item"><a href="#!">Gerenciar Cursos</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Page-header end -->
 
-<div class="page-body">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="card-header">
-                    <h5>Todos os Cursos</h5>
-                    <span><a href="index.php?p=cadastrar_curso">Clique aqui</a> para cadastrar um curso</span>
-                </div>
-                <div class="card-block table-border-style">
-                    <div class="table-responsive">
-                        <table class="table">
+?>
+<main class="content">
+    <div class="card">
+        <div class="card-header">
+            <h3>Gerenciar Cursos</h3>           
+                <span><a href="index.php?p=cadastrar_curso">Clique aqui</a> para cadastrar um curso</span>
+                <p class="mb-0 mt-0">Administre os cursos cadastrados no sistema </p>
+        </div>
+        
+            <table class="table">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -78,9 +48,6 @@ $num_cursos = $sql_query->num_rows;
                                 } ?>
                             </tbody>
                         </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div>        
     </div>
-</div>
+</main>

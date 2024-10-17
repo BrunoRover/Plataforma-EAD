@@ -1,4 +1,7 @@
 <?php
+include("views/template/header.php");
+include("views/template/left.php");
+
 include("lib/conexao.php");
 include("lib/enviarArquivo.php");
 include('lib/protect.php');
@@ -54,41 +57,12 @@ if(isset($_POST['enviar'])) {
 }
 
 ?>
-<!-- Page-header start -->
-<div class="page-header card">
-    <div class="row align-items-end">
-        <div class="col-lg-6">
-            <div class="page-header-title">
-                <div class="d-inline">
-                    <h4>Cadastrar Curso</h4>
-                    <span>Preencha as informações e clique em Salvar</span>
-                </div>  
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="page-header-breadcrumb">
-                <ul class="breadcrumb-title">
-                    <li class="breadcrumb-item">
-                        <a href="index.php">
-                            <i class="icofont icofont-home"></i>
-                        </a>
-                    </li>
-                    <li class="breadcrumb-item">
-                        <a href="index.php?p=gerenciar_cursos">
-                            Gerenciar Cursos
-                        </a>
-                    </li>
-                    <li class="breadcrumb-item">Cadastrar Curso</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Page-header end -->
 
-<div class="page-body">
-    <div class="row">
-        <div class="col-sm-12">
+<main class="content">
+    <div class="card">
+        <div class="card-header">
+            <h3>Cadastrar Curso</h3>           
+            <p class="mb-0 mt-0">Preencha as informações e clique em Salvar</p>
             <?php if(isset($erro) && count($erro) > 0) {
                 ?>
                 <div class="alert alert-danger" role="alert">
@@ -97,14 +71,10 @@ if(isset($_POST['enviar'])) {
                 <?php
             }
             ?>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h5>Formulário de Cadastro</h5>
-                </div>
-                <div class="card-block">
+        </div>
+            <div class="card-block">
                     <form action="" method="POST" enctype="multipart/form-data">
-                        <div class="row">
+                        <div class="row mt-3">
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <label for="">Título</label>
@@ -133,7 +103,7 @@ if(isset($_POST['enviar'])) {
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="">Conteúdo</label>
-                                    <textarea name="conteudo" rows="10" class="form-control"></textarea>
+                                    <textarea name="conteudo" rows="6" class="form-control"></textarea>
                                 </div>  
                             </div>
                             <div class="col-lg-12">
@@ -144,7 +114,6 @@ if(isset($_POST['enviar'])) {
                     </form>
                     
                 </div>
-            </div>
-        </div>
+        </div>        
     </div>
-</div>
+</main>

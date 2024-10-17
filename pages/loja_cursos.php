@@ -43,46 +43,15 @@ $id_usuario = $_SESSION['usuario'];
 $cursos_query = $mysqli->query("SELECT * FROM cursos WHERE id NOT IN (SELECT id_curso FROM relatorio WHERE id_usuario = '$id_usuario')") or die($mysqli->error);
 
 ?>
-<!-- Page-header start -->
-<div class="page-header card">
-    <div class="row align-items-end">
-        <div class="col-lg-8">
-            <div class="page-header-title">
-                <div class="d-inline">
-                    <h4>Loja de Cursos</h4>
-                    <span>Adquira nossos cursos usando o seu crédito</span>
-                </div>  
+<main class="content">
+    
+        <div class="card">
+            <div class="card-header">
+                <h3>Loja de Cursos</h3>
+                <p class="mb-0">Adquira nossos cursos usando o seu crédito</p>
             </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="page-header-breadcrumb">
-                <ul class="breadcrumb-title">
-                    <li class="breadcrumb-item">
-                        <a href="index.php">
-                            <i class="icofont icofont-home"></i>
-                        </a>
-                    </li>
-                    <li class="breadcrumb-item">Loja de Cursos</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Page-header end -->
-
-<div class="page-body">
-    <div class="row">
-        <div class="col-sm-12">
-        <?php if($erro !== false) {
-                                    ?>
-            <div class="alert alert-danger" role="alert">
-                <?php echo $erro; ?>
-            </div>
-            <?php
-        }
-        ?>
-        </div>
-        <?php while($curso = $cursos_query->fetch_assoc()) { ?>
+            <div class="card-body">
+            <?php while($curso = $cursos_query->fetch_assoc()) { ?>
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-header">
@@ -100,6 +69,7 @@ $cursos_query = $mysqli->query("SELECT * FROM cursos WHERE id NOT IN (SELECT id_
             </div>
         </div>
         <?php } ?>
-        
-    </div>
-</div>
+            </div>
+        </div>
+   
+</main>
