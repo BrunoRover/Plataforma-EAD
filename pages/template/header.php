@@ -29,7 +29,7 @@ $dados_usuario = $sql_query_admin->fetch_assoc();
     <title>In N' Out</title>
 </head>
 <body>
-    <header class="header" style="color: white";>
+    <header class="header" style="color: white; background-color: #0D0D0D;">
         <div class="logo">
             
             <span class="font-weight-light">The </span>
@@ -37,9 +37,7 @@ $dados_usuario = $sql_query_admin->fetch_assoc();
             <span class="font-weight-light">School</span>
             
         </div>
-        <div class="menu-toggle mx-3">
-            <i class="fa-solid fa-bars"></i>
-        </div>
+        
         <div class="spacer"></div>
         <?php if(!isset($_SESSION['admin']) || !$_SESSION['admin']) { ?>
         <div class="font-weight-light mr-3">R$ <?php echo $dados_usuario['creditos']; ?></div>
